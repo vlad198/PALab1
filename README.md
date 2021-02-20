@@ -63,3 +63,42 @@ where to packageName is the name of the package which includes the file Main.jav
 
 - [x] Implement an efficient algorithm that generates a random rooted tree. Create and display a textual representation of the tree, for example:
 - ![alt text](readme_images/bonus_exemple.png)
+
+## Results of the programs
+
+### Compulsory
+
+![](readme_images/compulsory_program.png)
+
+### Optional
+
+- Exemple 1
+  
+  ![alt text](readme_images/optional_exemple_2.png)
+
+- Exemple 2 : n = 7
+  
+  ![](readme_images/optional_exemple.png)
+
+- Exemple 3 : n = 7
+
+![](readme_images/optional_exemple_1.png)
+  
+- Exemple 4 : without printing graph and tree matrix
+
+![](readme_images/optional_exemple_3.png)
+
+
+### Bonus
+
+- Exemple 1
+
+![](readme_images/bonus_program_1.png)
+
+- Exemple 2
+
+![](readme_images/bonus_program_2.png)
+
+- Exemple 3
+
+![](readme_images/bonus_program_3.png)
