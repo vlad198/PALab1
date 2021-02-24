@@ -2,25 +2,43 @@ package pa.lab1.bonus;
 
 import java.util.Vector;
 
+/**
+ * class used to generate random tree
+ */
 public class Tree {
 
     // CONSTANTS
-    public static final double levelProbability = 0.4;
-    public static final double maxNumberOfLevels = 5;
-    public static final int maxNumberOfDescendents = 3;
+    public final double levelProbability;
+    public final double maxNumberOfLevels;
+    public final int maxNumberOfDescendents;
 
     // OBJECT DATA
     private final int root;
     private final int n;
     private final Vector<Integer> parent;
 
-    Tree() {
+    /**
+     * Constructor with some limits and probabilities, otherwise our generation can go on forever
+     * @param levelProbability the probability to generate a new level for the tree
+     * @param maxNumberOfLevels maximum number of leveles for the tree
+     * @param maxNumberOfDescendents maximum number of descedents for a node in the tree
+     */
+    Tree(double levelProbability, double maxNumberOfLevels, int maxNumberOfDescendents) {
+        this.levelProbability = levelProbability;
+        this.maxNumberOfDescendents = maxNumberOfDescendents;
+        this.maxNumberOfLevels = maxNumberOfLevels;
         this.root = 0;
         parent = new Vector<Integer>();
         parent.add(-1);
         this.n = generate(1, 0);
     }
 
+    /**
+     * generates the random tree
+     * @param nthLevel current level
+     * @param nodesSoFar the number of nodes generated at some point
+     * @return the number of nodes in the tree without the root
+     */
     private int generate(int nthLevel, int nodesSoFar) {
         double newLevelProbability = Math.random();
 
@@ -39,6 +57,11 @@ public class Tree {
             return nodesSoFar;
     }
 
+    /**
+     * check if a node is a leaf or no for our tree
+     * @param node the node checked
+     * @return true if it is a leaf, false otherwise
+     */
     private boolean isLeaf(int node) {
         for (Integer parrentNode : parent)
             if (parrentNode == node)
@@ -46,6 +69,11 @@ public class Tree {
         return true;
     }
 
+    /**
+     * print the tree with the given template
+     * @param nthLevel - current level
+     * @param currentNode - current node to print
+     */
     private void print(int nthLevel, int currentNode) {
 
         for (int i = 0; i < nthLevel - 1; i++)
@@ -61,6 +89,9 @@ public class Tree {
         }
     }
 
+    /**
+     * public method to print the tree
+     */
     public void printTree() {
         print(1, 0);
     }
