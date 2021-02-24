@@ -3,6 +3,9 @@ package pa.lab1.optional;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * class to generate graphs
+ */
 public class Graph {
     protected int n;
     protected int[][] matrix;
@@ -17,7 +20,8 @@ public class Graph {
     }
 
     /**
-     * @param numberOfNodes
+     * Constructor
+     * @param numberOfNodes  number of node for the given graph
      */
     Graph(int numberOfNodes) {
         this.n = numberOfNodes;
@@ -26,10 +30,9 @@ public class Graph {
 
     /**
      * BFS algorithm
-     *
-     * @param node - start node(first node in the queue)
-     * @param k    - mark for every node in the matrix(node i is int k-th connected component)
-     * @param viz  - vector of marks for every node in the graph
+     * @param node  start node(first node in the queue)
+     * @param k     mark for every node in the matrix(node i is int k-th connected component)
+     * @param viz   vector of marks for every node(node i is in the viz[i] connected component)
      */
     public void BFS(int node, int k, int[] viz) {
         Queue<Integer> q = new LinkedList<>();
@@ -51,8 +54,7 @@ public class Graph {
 
     /**
      * check if the graph is connex
-     *
-     * @return - true if the graph si connex ,
+     * @return  true if the graph si connex , false otherwise
      */
     public boolean connectedGraph() {
         int[] viz = new int[n + 1];
@@ -81,6 +83,11 @@ public class Graph {
         }
     }
 
+    /**
+     *
+     * @param viz vector of marks for every node(node i is in the viz[i] connected component)
+     * @return the number of connected components
+     */
     private int generateConnectedComponents(int[] viz) {
         int numberOfConnectedComponents = 0;
         for (int i = 1; i <= this.n; i++)
@@ -89,6 +96,9 @@ public class Graph {
         return numberOfConnectedComponents;
     }
 
+    /**
+     * Print all the connected components of the graph
+     */
     public void printConnectedComponents() {
         int[] components = new int[this.n + 1];
 
@@ -129,10 +139,18 @@ public class Graph {
         }
     }
 
+    /**
+     * getter for number of nodes
+     * @return number of nodes
+     */
     public int getN() {
         return this.n;
     }
 
+    /**
+     * getter for the adjacency matrix of the graph
+     * @return adjacency matrix of the graph
+     */
     public int[][] getMatrix() {
         return this.matrix;
     }

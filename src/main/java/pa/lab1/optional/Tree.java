@@ -3,9 +3,16 @@ package pa.lab1.optional;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Class to generate trees
+ */
 public class Tree extends Graph {
     private final int root;
 
+    /**
+     * Constructor
+     * @param g the graph used to generate the tree
+     */
     Tree(Graph g) {
         this.n = g.getN();
         this.root = (int) (Math.random() * n + 1);
@@ -13,6 +20,10 @@ public class Tree extends Graph {
         generatePartialTree(g);
     }
 
+    /**
+     * Generate partial tree of the given graph with random root
+     * @param g the graph used to generate the tree
+     */
     private void generatePartialTree(Graph g) {
         int[] visitedNode = new int[this.n + 1];
         int[][] givenGraphMatrix = g.getMatrix();
