@@ -1,11 +1,11 @@
 package pa.lab1.optional;
 
-public class ContorizeTime {
+public class MonitorizeTime {
 
     private long start;
     private long end;
 
-    ContorizeTime() {
+    MonitorizeTime() {
         start = end = 0;
     }
 

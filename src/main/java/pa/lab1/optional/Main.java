@@ -1,7 +1,5 @@
 package pa.lab1.optional;
 
-import java.util.*;
-
 //  compile : javac -d . Main.java
 //  run     : java -Xms8G -Xmx8G optional.Main 30000
 
@@ -11,7 +9,7 @@ public class Main {
 
         CastArgument cast = new CastArgument();
         ValidateArgument validate = new ValidateArgument();
-        ContorizeTime programTime = new ContorizeTime();
+        MonitorizeTime programTime = new MonitorizeTime();
 
         validate.stringArrayNotEmpty(args, "Nu a fost dat n ca si argument.");
 
